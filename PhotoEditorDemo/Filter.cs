@@ -6,12 +6,22 @@ namespace PhotoEditorDemo
 {
     public static class Filter
     {
+        static byte A;
+        static byte R;
+        static byte G;
+        static byte B;
+
+        private static void SetPixelColor(Color pixelColor)
+        {
+            A = pixelColor.A;
+            R = pixelColor.R;
+            G = pixelColor.G;
+            B = pixelColor.B;
+        }
+
         public static Color ThreeColor(this Color pixelColor)
         {
-            byte A = pixelColor.A;
-            byte R = pixelColor.R;
-            byte G = pixelColor.G;
-            byte B = pixelColor.B;
+            SetPixelColor(pixelColor);
 
             if (R > G && R > B)
             {
@@ -47,10 +57,7 @@ namespace PhotoEditorDemo
         }
         public static Color RandomNoiseV1(this Color pixelColor)
         {
-            byte A = pixelColor.A;
-            byte R = pixelColor.R;
-            byte G = pixelColor.G;
-            byte B = pixelColor.B;
+            SetPixelColor(pixelColor);
 
             Random random = new Random();
             R = (byte)(R - random.Next(byte.MaxValue));
@@ -61,10 +68,7 @@ namespace PhotoEditorDemo
         }
         public static Color RandomNoiseV2(this Color pixelColor)
         {
-            byte A = pixelColor.A;
-            byte R = pixelColor.R;
-            byte G = pixelColor.G;
-            byte B = pixelColor.B;
+            SetPixelColor(pixelColor);
 
             Random random = new Random();
             byte tempByte = (byte)random.Next(byte.MaxValue);
@@ -76,10 +80,7 @@ namespace PhotoEditorDemo
         }
         public static Color RandomNoiseV3(this Color pixelColor)
         {
-            byte A = pixelColor.A;
-            byte R = pixelColor.R;
-            byte G = pixelColor.G;
-            byte B = pixelColor.B;
+            SetPixelColor(pixelColor);
 
             Random random = new Random();
             // random bits from 0-16
@@ -92,10 +93,7 @@ namespace PhotoEditorDemo
         }
         public static Color RandomNoiseV4(this Color pixelColor)
         {
-            byte A = pixelColor.A;
-            byte R = pixelColor.R;
-            byte G = pixelColor.G;
-            byte B = pixelColor.B;
+            SetPixelColor(pixelColor);
 
             Random random = new Random();
             byte bytes = (byte)random.Next(byte.MaxValue / 4);
@@ -107,10 +105,7 @@ namespace PhotoEditorDemo
         }
         public static Color GrayscaleAverage(this Color pixelColor)
         {
-            byte A = pixelColor.A;
-            byte R = pixelColor.R;
-            byte G = pixelColor.G;
-            byte B = pixelColor.B;
+            SetPixelColor(pixelColor);
 
             int avr = (R + G + B) / 3;
 
@@ -118,10 +113,7 @@ namespace PhotoEditorDemo
         }
         public static Color GrayscaleMax(this Color pixelColor)
         {
-            byte A = pixelColor.A;
-            byte R = pixelColor.R;
-            byte G = pixelColor.G;
-            byte B = pixelColor.B;
+            SetPixelColor(pixelColor);
 
             int[] arr = { R, G, B };
             int maxValue = arr.Max();
@@ -130,10 +122,7 @@ namespace PhotoEditorDemo
         }
         public static Color GrayscaleMin(this Color pixelColor)
         {
-            byte A = pixelColor.A;
-            byte R = pixelColor.R;
-            byte G = pixelColor.G;
-            byte B = pixelColor.B;
+            SetPixelColor(pixelColor);
 
             int[] arr = { R, G, B };
             int maxValue = arr.Min();
@@ -142,10 +131,7 @@ namespace PhotoEditorDemo
         }
         public static Color BlackWhite(this Color pixelColor)
         {
-            byte A = pixelColor.A;
-            byte R = pixelColor.R;
-            byte G = pixelColor.G;
-            byte B = pixelColor.B;
+            SetPixelColor(pixelColor);
 
             int avr = (R + G + B) / 3;
 
@@ -159,10 +145,7 @@ namespace PhotoEditorDemo
         }
         public static Color BlackWhiteNegative(this Color pixelColor)
         {
-            byte A = pixelColor.A;
-            byte R = pixelColor.R;
-            byte G = pixelColor.G;
-            byte B = pixelColor.B;
+            SetPixelColor(pixelColor);
 
             int avr = (R + G + B) / 3;
 
@@ -176,10 +159,7 @@ namespace PhotoEditorDemo
         }
         public static Color BlackRed(this Color pixelColor)
         {
-            byte A = pixelColor.A;
-            byte R = pixelColor.R;
-            byte G = pixelColor.G;
-            byte B = pixelColor.B;
+            SetPixelColor(pixelColor);
 
             int avr = (R + G + B) / 3;
 
@@ -198,10 +178,7 @@ namespace PhotoEditorDemo
         }
         public static Color RedPalletOnly(this Color pixelColor)
         {
-            byte A = pixelColor.A;
-            byte R = pixelColor.R;
-            byte G = pixelColor.G;
-            byte B = pixelColor.B;
+            SetPixelColor(pixelColor);
 
             G = B = 0;
 
@@ -210,10 +187,7 @@ namespace PhotoEditorDemo
         }
         public static Color GreenPalletOnly(this Color pixelColor)
         {
-            byte A = pixelColor.A;
-            byte R = pixelColor.R;
-            byte G = pixelColor.G;
-            byte B = pixelColor.B;
+            SetPixelColor(pixelColor);
 
             R = B = 0;
 
@@ -222,10 +196,7 @@ namespace PhotoEditorDemo
         }
         public static Color BluePalletOnly(this Color pixelColor)
         {
-            byte A = pixelColor.A;
-            byte R = pixelColor.R;
-            byte G = pixelColor.G;
-            byte B = pixelColor.B;
+            SetPixelColor(pixelColor);
 
             R = G = 0;
 
@@ -234,10 +205,7 @@ namespace PhotoEditorDemo
         }
         public static Color Cyan(this Color pixelColor)
         {
-            byte A = pixelColor.A;
-            byte R = pixelColor.R;
-            byte G = pixelColor.G;
-            byte B = pixelColor.B;
+            SetPixelColor(pixelColor);
 
             R = 0;
 
@@ -246,10 +214,7 @@ namespace PhotoEditorDemo
         }
         public static Color Purple(this Color pixelColor)
         {
-            byte A = pixelColor.A;
-            byte R = pixelColor.R;
-            byte G = pixelColor.G;
-            byte B = pixelColor.B;
+            SetPixelColor(pixelColor);
 
             G = 0;
 
@@ -258,10 +223,7 @@ namespace PhotoEditorDemo
         }
         public static Color Yellow(this Color pixelColor)
         {
-            byte A = pixelColor.A;
-            byte R = pixelColor.R;
-            byte G = pixelColor.G;
-            byte B = pixelColor.B;
+            SetPixelColor(pixelColor);
 
             B = 0;
 
@@ -270,10 +232,7 @@ namespace PhotoEditorDemo
         }
         public static Color InvertColor(this Color pixelColor)
         {
-            byte A = pixelColor.A;
-            byte R = pixelColor.R;
-            byte G = pixelColor.G;
-            byte B = pixelColor.B;
+            SetPixelColor(pixelColor);
 
             R = (byte)(255 - R);
             G = (byte)(255 - G);
@@ -284,49 +243,32 @@ namespace PhotoEditorDemo
         }
         public static Color ToGBR(this Color pixelColor)
         {
-            byte A = pixelColor.A;
-            byte R = pixelColor.R;
-            byte G = pixelColor.G;
-            byte B = pixelColor.B;
+            SetPixelColor(pixelColor);
 
             return Color.FromArgb(A, G, B, R);
 
         }
         public static Color ToBRG(this Color pixelColor)
         {
-            byte A = pixelColor.A;
-            byte R = pixelColor.R;
-            byte G = pixelColor.G;
-            byte B = pixelColor.B;
+            SetPixelColor(pixelColor);
 
             return Color.FromArgb(A, B, R, G);
-
         }
         public static Color ToGRB(this Color pixelColor)
         {
-            byte A = pixelColor.A;
-            byte R = pixelColor.R;
-            byte G = pixelColor.G;
-            byte B = pixelColor.B;
+            SetPixelColor(pixelColor);
 
             return Color.FromArgb(A, G, R, B);
-
         }
         public static Color ToRBG(this Color pixelColor)
         {
-            byte A = pixelColor.A;
-            byte R = pixelColor.R;
-            byte G = pixelColor.G;
-            byte B = pixelColor.B;
+            SetPixelColor(pixelColor);
 
             return Color.FromArgb(A, R, B, G);
         }
         public static Color EightBitColor(this Color pixelColor)
         {
-            byte A = pixelColor.A;
-            byte R = pixelColor.R;
-            byte G = pixelColor.G;
-            byte B = pixelColor.B;
+            SetPixelColor(pixelColor);
 
             if (R < 64) R = 0;
             else if (R < 128) R = 64;
@@ -348,10 +290,7 @@ namespace PhotoEditorDemo
         }
         public static Color Test(this Color pixelColor)
         {
-            byte A = pixelColor.A;
-            byte R = pixelColor.R;
-            byte G = pixelColor.G;
-            byte B = pixelColor.B;
+            SetPixelColor(pixelColor);
 
             if (R < 128) R = 0;
             else R = 255;
