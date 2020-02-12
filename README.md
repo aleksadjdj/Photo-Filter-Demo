@@ -1,2 +1,3 @@
 # Photo-Filter-Demo
-funny photo filter program 
+Funny Photo Filter program 
+
