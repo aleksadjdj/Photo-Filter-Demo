@@ -20,7 +20,7 @@ namespace PhotoEditorDemo
                 for (int y = 0; y < bitmap.Height; y++)
                 {
                     Color pixelColor = bitmap.GetPixel(x, y);
-                    Color newPixelColor = pixelColor.EightBitColor().GrayscaleAverage(); //  <- apple filters
+                    Color newPixelColor = pixelColor.EightBitColor().GrayscaleAverage(); //  <- apply filters
                     bitmap.SetPixel(x, y, newPixelColor);
                 }
             }
