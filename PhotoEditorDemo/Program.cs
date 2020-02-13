@@ -7,10 +7,14 @@ namespace PhotoEditorDemo
     {
         static void Main()
         {
+
+            string inputFile = "D:\\asd.jpg";
+            string outputFile = "D:\\demo2.png";
+
             Console.WriteLine("Working...");
 
-            Stopwatch stopwatch = Stopwatch.StartNew();
-            new ImageEditor("D:\\demo.jpg", "D:\\demo2.png");
+            var stopwatch = Stopwatch.StartNew();
+            new ImageEditor(inputFile, outputFile);
             Console.WriteLine($"{stopwatch.Elapsed}");
         }
     }

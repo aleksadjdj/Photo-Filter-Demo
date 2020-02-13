@@ -313,5 +313,52 @@ namespace PhotoEditorDemo
             return Color.FromArgb(A, R, G, B);
 
         }
+
+        public static Color RandomFilterV1(this Color pixelColor)
+        {
+            SetPixelColor(pixelColor);
+
+            R = 100; B = 100;
+
+            return Color.FromArgb(A, R, G, B);
+
+        }
+
+        public static Color RandomFilterV2(this Color pixelColor)
+        {
+            SetPixelColor(pixelColor);
+
+            R = 255; B = 255;
+
+            return Color.FromArgb(A, R, G, B);
+
+        }
+
+
+        public static Color RandomFilterV3(this Color pixelColor)
+        {
+            SetPixelColor(pixelColor);
+
+            G = 64; B = 64;
+
+            return Color.FromArgb(A, R, G, B);
+
+        }
+
+        public static Color RandomFilterV4(this Color pixelColor, int x, int y)
+        {
+            SetPixelColor(pixelColor);
+
+            R = (byte)((R + x) * y);
+            G = (byte)((G + x) * y);
+            B = (byte)((B + x) * y);
+
+            return Color.FromArgb(A, R, G, B);
+
+        }
+
+
+
+
     }
 }
