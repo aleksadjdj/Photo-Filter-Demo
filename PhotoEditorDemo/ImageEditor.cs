@@ -20,7 +20,7 @@ namespace PhotoEditorDemo
                 for (int y = 0; y < bitmap.Height; y++)
                 {
                     Color pixelColor = bitmap.GetPixel(x, y);
-                    Color newPixelColor = pixelColor.RandomNoiseV4().EightBitColor().ToGRB(); //  <- apply filters
+                    Color newPixelColor = pixelColor.Grayscale(); //  <- apply filters
                     bitmap.SetPixel(x, y, newPixelColor);
                 }
             }

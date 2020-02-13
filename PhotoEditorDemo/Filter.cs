@@ -6,10 +6,10 @@ namespace PhotoEditorDemo
 {
     public static class Filter
     {
-        static byte A;
-        static byte R;
-        static byte G;
-        static byte B;
+        private static byte A;
+        private static byte R;
+        private static byte G;
+        private static byte B;
 
         private static void SetPixelColor(Color pixelColor)
         {
@@ -19,6 +19,7 @@ namespace PhotoEditorDemo
             B = pixelColor.B;
         }
 
+        
         public static Color ThreeColor(this Color pixelColor)
         {
             SetPixelColor(pixelColor);
@@ -128,6 +129,14 @@ namespace PhotoEditorDemo
             int maxValue = arr.Min();
 
             return Color.FromArgb(A, maxValue, maxValue, maxValue);
+        }
+        public static Color Grayscale(this Color pixelColor)
+        {
+            SetPixelColor(pixelColor);
+
+            byte grayScale = (byte)((R * 0.3) + (G * 0.59) + (B * 0.11));
+
+            return Color.FromArgb(A, grayScale, grayScale, grayScale);
         }
         public static Color BlackWhite(this Color pixelColor)
         {
@@ -241,26 +250,26 @@ namespace PhotoEditorDemo
             return Color.FromArgb(A, R, G, B);
 
         }
-        public static Color ToGBR(this Color pixelColor)
+        public static Color SwapToGBR(this Color pixelColor)
         {
             SetPixelColor(pixelColor);
 
             return Color.FromArgb(A, G, B, R);
 
         }
-        public static Color ToBRG(this Color pixelColor)
+        public static Color SwapToBRG(this Color pixelColor)
         {
             SetPixelColor(pixelColor);
 
             return Color.FromArgb(A, B, R, G);
         }
-        public static Color ToGRB(this Color pixelColor)
+        public static Color SwapToGRB(this Color pixelColor)
         {
             SetPixelColor(pixelColor);
 
             return Color.FromArgb(A, G, R, B);
         }
-        public static Color ToRBG(this Color pixelColor)
+        public static Color SwapToRBG(this Color pixelColor)
         {
             SetPixelColor(pixelColor);
 
