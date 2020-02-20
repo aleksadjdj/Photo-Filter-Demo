@@ -6,10 +6,7 @@ namespace PhotoEditorDemo
 {
     public static class Filter
     {
-        private static byte A;
-        private static byte R;
-        private static byte G;
-        private static byte B;
+        private static byte A, R, G, B;
 
         private static void SetPixelColor(Color pixelColor)
         {
@@ -18,8 +15,6 @@ namespace PhotoEditorDemo
             G = pixelColor.G;
             B = pixelColor.B;
         }
-
-        
         public static Color ThreeColor(this Color pixelColor)
         {
             SetPixelColor(pixelColor);
@@ -357,8 +352,24 @@ namespace PhotoEditorDemo
 
         }
 
+        public static Color RandomFilterV5(this Color pixelColor, int x, int y, int width, int height)
+        {
+            SetPixelColor(pixelColor);
 
+            int currentIndex = x + y * width;
+            int redColorRange = (int)Math.Round(width * height / 3d);
+            int greenColorRange = (int)Math.Round(width * height / 3d) * 2;
+          
+            if (currentIndex <= redColorRange) 
+                G = B = 0;
+            else if(currentIndex > redColorRange && currentIndex <= greenColorRange)
+                R = B = 0;
+            else
+                R = G = 0;
+          
 
+            return Color.FromArgb(A, R, G, B);
 
+        }
     }
 }

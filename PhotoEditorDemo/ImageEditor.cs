@@ -15,12 +15,13 @@ namespace PhotoEditorDemo
 
         private Bitmap ApplyFilter(Bitmap bitmap)
         {
-            for (int x = 0; x < bitmap.Width; x++)
+            for (int y = 0; y < bitmap.Height; y++)
             {
-                for (int y = 0; y < bitmap.Height; y++)
+                for (int x = 0; x < bitmap.Width; x++)
                 {
+               
                     Color pixelColor = bitmap.GetPixel(x, y);
-                    Color newPixelColor = pixelColor.RandomFilterV4(x, y); //  <- apply filters
+                    Color newPixelColor = pixelColor.RandomFilterV5(x, y, bitmap.Width, bitmap.Height); //  <- apply filters
                     bitmap.SetPixel(x, y, newPixelColor);
                 }
             }

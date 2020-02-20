@@ -8,8 +8,8 @@ namespace PhotoEditorDemo
         static void Main()
         {
 
-            string inputFile = "D:\\asd.jpg";
-            string outputFile = "D:\\demo2.png";
+            string inputFile = @"D:\asd.jpg";
+            string outputFile = @"D:\demo2.png";
 
             Console.WriteLine("Working...");
 
