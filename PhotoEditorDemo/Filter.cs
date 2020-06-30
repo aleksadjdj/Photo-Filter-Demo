@@ -154,7 +154,6 @@ namespace PhotoEditorDemo
                 R = G = B = 255;
 
             return Color.FromArgb(A, R, G, B);
-
         }
         public static Color BlackWhiteNegative(this Color pixelColor)
         {
@@ -168,7 +167,6 @@ namespace PhotoEditorDemo
                 R = G = B = 0;
 
             return Color.FromArgb(A, R, G, B);
-
         }
         public static Color BlackRed(this Color pixelColor)
         {
@@ -187,7 +185,6 @@ namespace PhotoEditorDemo
             }
 
             return Color.FromArgb(A, R, G, B);
-
         }
         public static Color RedPalletOnly(this Color pixelColor)
         {
@@ -196,7 +193,6 @@ namespace PhotoEditorDemo
             G = B = 0;
 
             return Color.FromArgb(A, R, G, B);
-
         }
         public static Color GreenPalletOnly(this Color pixelColor)
         {
@@ -205,7 +201,6 @@ namespace PhotoEditorDemo
             R = B = 0;
 
             return Color.FromArgb(A, R, G, B);
-
         }
         public static Color BluePalletOnly(this Color pixelColor)
         {
@@ -214,7 +209,6 @@ namespace PhotoEditorDemo
             R = G = 0;
 
             return Color.FromArgb(A, R, G, B);
-
         }
         public static Color Cyan(this Color pixelColor)
         {
@@ -223,7 +217,6 @@ namespace PhotoEditorDemo
             R = 0;
 
             return Color.FromArgb(A, R, G, B);
-
         }
         public static Color Purple(this Color pixelColor)
         {
@@ -232,7 +225,6 @@ namespace PhotoEditorDemo
             G = 0;
 
             return Color.FromArgb(A, R, G, B);
-
         }
         public static Color Yellow(this Color pixelColor)
         {
@@ -241,7 +233,6 @@ namespace PhotoEditorDemo
             B = 0;
 
             return Color.FromArgb(A, R, G, B);
-
         }
         public static Color InvertColor(this Color pixelColor)
         {
@@ -252,14 +243,12 @@ namespace PhotoEditorDemo
             B = (byte)(255 - B);
 
             return Color.FromArgb(A, R, G, B);
-
         }
         public static Color SwapToGBR(this Color pixelColor)
         {
             SetPixelColor(pixelColor);
 
             return Color.FromArgb(A, G, B, R);
-
         }
         public static Color SwapToBRG(this Color pixelColor)
         {
@@ -299,7 +288,6 @@ namespace PhotoEditorDemo
             else B = 255;
 
             return Color.FromArgb(A, R, G, B);
-
         }
         public static Color Test(this Color pixelColor)
         {
@@ -325,7 +313,6 @@ namespace PhotoEditorDemo
             R = 100; B = 100;
 
             return Color.FromArgb(A, R, G, B);
-
         }
 
         public static Color RandomFilterV2(this Color pixelColor)
@@ -335,9 +322,7 @@ namespace PhotoEditorDemo
             R = 255; B = 255;
 
             return Color.FromArgb(A, R, G, B);
-
         }
-
 
         public static Color RandomFilterV3(this Color pixelColor)
         {
@@ -346,7 +331,6 @@ namespace PhotoEditorDemo
             G = 64; B = 64;
 
             return Color.FromArgb(A, R, G, B);
-
         }
 
         public static Color RandomFilterV4(this Color pixelColor, int x, int y)
@@ -358,7 +342,6 @@ namespace PhotoEditorDemo
             B = (byte)((B + x) * y);
 
             return Color.FromArgb(A, R, G, B);
-
         }
 
         public static Color RandomFilterV5(this Color pixelColor, int x, int y, int width, int height)
@@ -378,7 +361,6 @@ namespace PhotoEditorDemo
           
 
             return Color.FromArgb(A, R, G, B);
-
         }
     }
 }
