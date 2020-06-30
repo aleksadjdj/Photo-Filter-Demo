@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Drawing;
 using System.Linq;
 
@@ -48,6 +48,15 @@ namespace PhotoEditorDemo
                 R = 255; G = 0; B = 0;
             }
 
+            return Color.FromArgb(A, R, G, B);
+        }
+
+        public static Color RemoveGrayNoiseV1(this Color pixelColor)
+        {
+            SetPixelColor(pixelColor);
+
+            if (R > 245 && G > 245 && B > 245)
+                R = G = B = 255;
 
             return Color.FromArgb(A, R, G, B);
         }
